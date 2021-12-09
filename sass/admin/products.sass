@@ -1,0 +1,72 @@
+@import ../vars
+@import ../global
+@import ../mixins
+
+
+.products_list
+    @include card-layout(2,4,20px)
+
+    .product
+        padding: 20px
+        display: flex
+        flex-direction: column
+        align-items: center
+        background: $primary
+        border: none
+        border-radius: 10px
+        cursor: pointer
+        transition: all .4s ease-out
+        position: relative
+        &:hover
+            transform: scale(1.01)
+            background: $secondary
+
+        &_edit_iconbox 
+            position: absolute
+            right: 25px
+
+            &_icon
+                color: $primary-light
+                font-size: 20px
+                &:hover
+                    color: $secondary-light
+
+        &_imgbox_img
+            font-size: 100px
+            max-width: 100%
+            color: $primary-light
+        &_info
+            display: flex
+            flex-direction: column
+
+
+            &_titlebox
+                color: black
+                font-weight: bold
+                
+
+                &_title
+                    color: $light
+                    margin-bottom: 10px
+                    text-align: center
+                
+                &_price
+                    color: $primary-light
+                    font-size: 1rem
+                    text-align-last: center
+                    margin: 15px 0
+                
+.header .container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    @include tablet()
+        flex-direction: row
+        justify-content: space-between
+        align-items: center    
+
+.products_alert
+    color: $primary-light
+    font-size: 1.4rem

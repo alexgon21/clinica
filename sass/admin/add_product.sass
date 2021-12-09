@@ -1,0 +1,123 @@
+@import ../vars
+@import ../global
+@import ../mixins
+
+main,body
+    background-color: $primary-light!important
+
+.resultados
+    background-color: #fff
+    padding: 20px
+
+main
+    padding: 50px 20px!important
+
+.form
+    padding: 20px
+    background: $secondary
+    border: none
+    border-radius: 6px
+    width: 100%
+    max-width: 100%
+
+    @include tablet()
+        padding: 40px 60px
+
+        .form_section
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+
+            &.section_form
+                padding: 20px
+                border-radius: 10px
+                background-color: $secondary
+                grid-area: form
+
+    &_group
+        display: flex
+        flex-direction: column
+
+        &_label
+            margin: 25px 0 10px 0
+            color: $primary-light
+            font-size: 1rem
+            @include tablet()
+                margin: 0
+                margin-bottom: 15px
+
+        & [type="text"], [type="number"], [type="date"], [type="password"], [type="email"]
+            padding: 6px
+            font-size: 1rem
+            color: $dark
+            border: 2px solid $secondary
+            border-radius: 6px
+            background-color: #fff
+            outline: none
+            @include tablet()
+                margin-bottom: 15px
+
+        & select
+            padding: 6px
+            font-size: 1rem
+            color: $dark
+            border: 2px solid $secondary
+            border-radius: 6px
+            background-color: #fff
+            outline: none!important
+            @include tablet()
+                margin-bottom: 15px
+
+        & [type="file"]
+            display: inline-block
+            padding: 10px 15px
+            border: none
+            border-radius: 6px
+            background-color: $primary
+            color: $dark
+
+        textarea
+            resize: none
+            height: 150px
+
+    .button_group
+        display: grid
+        grid-template-columns: 1fr
+
+        @include tablet()
+            grid-area: buttons
+            grid-template-columns: repeat(2, 1fr)
+            justify-content: center
+            grid-gap: 20px
+            padding: 20px 100px
+
+        .button
+            display: inline-block
+            margin: 10px 0
+            padding: 6px 15px
+            width: 100%
+            font-size: 1.1rem
+            text-align: center
+            color: $primary
+            border: none
+            border-radius: 6px
+            cursor: pointer
+
+            &:hover
+                background-color: $secondary-light
+
+            &_add
+                background-color: $primary-light
+
+            &_back
+                background-color: $primary-light
+
+            &_delete
+                background-color: #e93731
+
+    .button_group_update
+        @include tablet()
+            grid-template-columns: repeat(3, 1fr)
+
+#smallImage
+    display: none
